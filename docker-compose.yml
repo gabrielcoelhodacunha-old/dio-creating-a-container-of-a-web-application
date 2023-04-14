@@ -1,0 +1,19 @@
+services:
+  back:
+    build: back
+    environment:
+      - TO_DO-HOST=back
+    ports:
+      - 5000:5000
+    networks:
+      - to_do
+
+  front:
+    build: front
+    ports:
+      - 3000:3000
+    networks:
+      - to_do
+
+networks:
+  to_do:
